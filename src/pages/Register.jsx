@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Loading from "../components/loading";
 import { toast } from "react-toastify";
 import { registerUser } from "../features/auth/authSlice";
 
@@ -49,7 +48,11 @@ const Register = () => {
   }, [user, isError, message]);
 
   if (isLoading) {
-    return <Loading />;
+    return (
+      <h1 className="text-center text-gray-400 my-10 font-black text-3xl">
+        Loading....
+      </h1>
+    );
   }
 
   return (
